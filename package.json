@@ -1,6 +1,6 @@
 {
   "name": "homebridge-theater-mode",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A homebridge plugin for reacting to Apple TV play/pause events.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,16 +21,16 @@
     "url": "http://github.com/edc1591/homebridge-theater-mode/issues"
   },
   "engines": {
-    "node": ">=0.12.0",
+    "node": ">=12.0.0",
     "homebridge": ">=0.2.0"
   },
   "devDependencies": {
-    "@types/mdns": "0.0.32",
-    "@types/node": "^9.4.6",
-    "rimraf": "^2.6.2",
-    "typescript": "^2.7.2"
+    "@types/mdns": "0.0.33",
+    "@types/node": "^12.12.25",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
-    "node-appletv": "^1.0.5"
+    "appletv-node": "https://github.com/Wojteek/appletv-node#master"
   }
 }

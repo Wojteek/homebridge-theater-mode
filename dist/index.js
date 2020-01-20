@@ -1,14 +1,14 @@
 "use strict";
 var Service, Characteristic;
-var node_appletv_1 = require("node-appletv");
+var appletv_node_1 = require("appletv-node");
 var AppleTVProgrammableSwitch = /** @class */ (function () {
     function AppleTVProgrammableSwitch(log, config) {
         this.log = log;
         this.playbackState = AppleTVProgrammableSwitch.PlaybackState.Stopped;
         this.isEnabled = false;
-        var credentials = node_appletv_1.parseCredentials(config.credentials);
+        var credentials = appletv_node_1.parseCredentials(config.credentials);
         var that = this;
-        node_appletv_1.scan(credentials.uniqueIdentifier)
+        appletv_node_1.scan(credentials.uniqueIdentifier)
             .then(function (devices) {
             that.device = devices[0];
             that.device.on('error', function (error) {
@@ -47,8 +47,8 @@ var AppleTVProgrammableSwitch = /** @class */ (function () {
                 if (info == null) {
                     return;
                 }
-                var stateIsPlaying = info.playbackState == node_appletv_1.NowPlayingInfo.State.Playing;
-                var stateIsPaused = info.playbackState == node_appletv_1.NowPlayingInfo.State.Paused;
+                var stateIsPlaying = info.playbackState == appletv_node_1.NowPlayingInfo.State.Playing;
+                var stateIsPaused = info.playbackState == appletv_node_1.NowPlayingInfo.State.Paused;
                 if (stateIsPlaying && !that_1.isPlaying()) {
                     that_1.triggerPlay();
                 }
